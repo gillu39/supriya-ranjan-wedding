@@ -408,50 +408,47 @@ export const TRANSLATIONS: Record<Language, TranslationSchema> = {
       mapTitle: "Map preview of New Saubhagya Lawn, Lucknow",
     },
     gallery: {
-      label: "Cherished Frames",
-      title: "Portrait & Decor Gallery",
+      label: "Cherished Moments",
+      title: "Couple & Family Gallery",
       subtitle:
-        "Artistic preview frames reserved for our upcoming wedding photographs.",
-      placeholderNotice:
-        "Artistic keepsake frames are displayed here until the wedding photographs are added.",
-      placeholderBadge: "Keepsake Frame",
-      openLightbox: "Open frame in fullscreen",
+        "Warm memories of Supriya & Dr. Ranjan together with their families.",
+      placeholderNotice: "",
+      placeholderBadge: "Photo",
+      openLightbox: "Open photo in fullscreen",
       closeLightbox: "Close gallery viewer",
-      previous: "Previous frame",
-      next: "Next frame",
+      previous: "Previous photo",
+      next: "Next photo",
       items: {
         "couple-portrait": {
-          title: "Couple Portrait",
-          caption: "Supriya & Dr. Ranjan — Portrait frame awaiting photographs",
+          title: "Together Forever",
+          caption: "Supriya & Dr. Ranjan — Engagement & blessings celebration",
           tag: "Couple",
         },
+        "bride-ceremony": {
+          title: "Bridal Grace",
+          caption: "Supriya Singh in traditional red chunri during rituals",
+          tag: "Bride",
+        },
+        "groom-sherwani": {
+          title: "The Groom",
+          caption: "Dr. Ranjan Bhaiji Patariya in ceremonial sherwani",
+          tag: "Groom",
+        },
+        "family-blessings": {
+          title: "Elders' Blessings",
+          caption:
+            "Auspicious tika and blessings from loving elders of the family",
+          tag: "Family",
+        },
         "bride-portrait": {
-          title: "Bride Portrait",
-          caption: "Supriya Singh — Bridal portrait placeholder",
+          title: "Supriya Singh",
+          caption: "A radiant portrait of the bride",
           tag: "Bride",
         },
         "groom-portrait": {
-          title: "Groom Portrait",
-          caption: "Dr. Ranjan Bhaiji Patariya — Groom portrait placeholder",
+          title: "Dr. Ranjan",
+          caption: "Portrait of Dr. Ranjan Bhaiji Patariya",
           tag: "Groom",
-        },
-        "family-bride": {
-          title: "Bride's Family Keepsake",
-          caption:
-            "Mr. Ram Kumar, Mrs. Bishakha & loving elders — Family frame placeholder",
-          tag: "Family",
-        },
-        "family-groom": {
-          title: "Groom's Family Keepsake",
-          caption:
-            "Mrs. Indrawati Prasad, Mr. Ram Kumar Prasad & family — Family frame placeholder",
-          tag: "Family",
-        },
-        "decor-mandap": {
-          title: "Mandap & Floral Decor",
-          caption:
-            "Marigold garlands, lotus motifs & brass diyas — Decor inspiration frame",
-          tag: "Decor",
         },
       },
     },
@@ -712,47 +709,44 @@ export const TRANSLATIONS: Record<Language, TranslationSchema> = {
       label: "मधुर स्मृतियाँ",
       title: "चित्र दीर्घा",
       subtitle:
-        "विवाह के वास्तविक चित्र जोड़े जाने तक कलात्मक फ्रेम प्रदर्शित किए गए हैं।",
-      placeholderNotice:
-        "जब तक वर-वधू के वास्तविक छायाचित्र अपलोड नहीं होते, तब तक नीचे कलात्मक प्लेसहोल्डर फ्रेम दिखाए गए हैं।",
-      placeholderBadge: "प्लेसहोल्डर फ्रेम",
+        "सुप्रिया एवं डॉ. रंजन तथा परिवार के स्नेहिल पलों की झलक।",
+      placeholderNotice: "",
+      placeholderBadge: "चित्र",
       openLightbox: "बड़े आकार में देखें",
       closeLightbox: "दीर्घा बंद करें",
       previous: "पिछला चित्र",
       next: "अगला चित्र",
       items: {
         "couple-portrait": {
-          title: "वर-वधू युगल चित्र",
-          caption: "सुप्रिया एवं डॉ. रंजन — युगल चित्र हेतु फ्रेम",
+          title: "सदा साथ",
+          caption: "सुप्रिया एवं डॉ. रंजन — सगाई एवं आशीर्वाद समारोह",
           tag: "युगल",
         },
+        "bride-ceremony": {
+          title: "सौभाग्यवती वधू",
+          caption: "मांगलिक रस्मों के दौरान पारंपरिक लाल चुनरी में सुप्रिया सिंह",
+          tag: "वधू",
+        },
+        "groom-sherwani": {
+          title: "आयुष्मान वर",
+          caption: "उत्सवी शेरवानी में डॉ. रंजन भाईजी पटरिया",
+          tag: "वर",
+        },
+        "family-blessings": {
+          title: "बड़ों का आशीर्वाद",
+          caption:
+            "परिवार के पूज्य बड़ों द्वारा शुभ तिलक एवं मंगल आशीर्वाद",
+          tag: "परिवार",
+        },
         "bride-portrait": {
-          title: "वधू चित्र",
-          caption: "सुप्रिया सिंह — वधू चित्र प्लेसहोल्डर",
+          title: "सुप्रिया सिंह",
+          caption: "वधू का स्नेहिल चित्र",
           tag: "वधू",
         },
         "groom-portrait": {
-          title: "वर चित्र",
-          caption: "डॉ. रंजन भाईजी पटरिया — वर चित्र प्लेसहोल्डर",
+          title: "डॉ. रंजन",
+          caption: "डॉ. रंजन भाईजी पटरिया का चित्र",
           tag: "वर",
-        },
-        "family-bride": {
-          title: "वधू परिवार स्मृति",
-          caption:
-            "श्री राम कुमार, श्रीमती बिशाखा एवं परिवारजन — पारिवारिक फ्रेम",
-          tag: "परिवार",
-        },
-        "family-groom": {
-          title: "वर परिवार स्मृति",
-          caption:
-            "श्रीमती इंद्रावती प्रसाद, श्री राम कुमार प्रसाद एवं परिवारजन — पारिवारिक फ्रेम",
-          tag: "परिवार",
-        },
-        "decor-mandap": {
-          title: "मंडप एवं पुष्प सज्जा",
-          caption:
-            "गेंदे के तोरण, कमल कलाकृति एवं दीप सज्जा — सजावट फ्रेम",
-          tag: "सजावट",
         },
       },
     },

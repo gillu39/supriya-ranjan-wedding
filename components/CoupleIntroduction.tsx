@@ -1,15 +1,11 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
-import type { Language } from "@/lib/wedding-data";
+import { COUPLE_PORTRAITS, type Language } from "@/lib/wedding-data";
 import type { TranslationSchema } from "@/lib/translations";
-import {
-  BrideIllustration,
-  GroomIllustration,
-  CornerFiligree,
-  LotusDivider,
-} from "./Illustrations";
+import { CornerFiligree, LotusDivider } from "./Illustrations";
 import { FamilySection } from "./FamilySection";
 
 interface CoupleIntroductionProps {
@@ -46,7 +42,7 @@ export function CoupleIntroduction({ t, lang }: CoupleIntroductionProps) {
           <LotusDivider className="mt-5" />
         </motion.div>
 
-        {/* Bride & Groom Illustrated Profile Cards */}
+        {/* Bride & Groom Arched Photo Profile Cards */}
         <div className="mt-12 grid gap-8 md:grid-cols-2">
           {/* Bride Card */}
           <motion.article
@@ -63,8 +59,16 @@ export function CoupleIntroduction({ t, lang }: CoupleIntroductionProps) {
               {t.brideRole}
             </span>
 
-            <div className="mx-auto my-5 w-44 sm:w-48">
-              <BrideIllustration className="h-auto w-full" />
+            <div className="relative mx-auto my-6 h-64 w-52 overflow-hidden rounded-t-[105px] rounded-b-2xl border-2 border-[#C6A15B]/80 bg-[#F7EFDF] p-1 shadow-lg">
+              <div className="relative h-full w-full overflow-hidden rounded-t-[98px] rounded-b-xl">
+                <Image
+                  src={COUPLE_PORTRAITS.bride}
+                  alt={t.brideName}
+                  fill
+                  sizes="208px"
+                  className="object-cover object-top"
+                />
+              </div>
             </div>
 
             <h3 className="font-serif-display text-2xl sm:text-3xl font-bold text-[#102F65]">
@@ -90,8 +94,16 @@ export function CoupleIntroduction({ t, lang }: CoupleIntroductionProps) {
               {t.groomRole}
             </span>
 
-            <div className="mx-auto my-5 w-44 sm:w-48">
-              <GroomIllustration className="h-auto w-full" />
+            <div className="relative mx-auto my-6 h-64 w-52 overflow-hidden rounded-t-[105px] rounded-b-2xl border-2 border-[#C6A15B]/80 bg-[#F7EFDF] p-1 shadow-lg">
+              <div className="relative h-full w-full overflow-hidden rounded-t-[98px] rounded-b-xl">
+                <Image
+                  src={COUPLE_PORTRAITS.groom}
+                  alt={t.groomName}
+                  fill
+                  sizes="208px"
+                  className="object-cover object-top"
+                />
+              </div>
             </div>
 
             <h3 className="font-serif-display text-2xl sm:text-3xl font-bold text-[#102F65]">

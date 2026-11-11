@@ -64,18 +64,54 @@ export const WEDDING_EVENTS: WeddingEventData[] = [
 
 export interface GalleryItem {
   id: string;
-  category: "bride" | "groom" | "couple" | "family" | "decor";
-  aspect: "portrait" | "landscape" | "square";
-  motif: "lotus" | "peacock" | "mandap" | "family" | "marigold";
+  category: "bride" | "groom" | "couple" | "family";
+  imageSrc: string;
+  objectPosition?: string;
 }
 
+export const COUPLE_PORTRAITS = {
+  bride: "/images/bride-ceremony.jpg",
+  groom: "/images/groom-sherwani.jpg",
+  couple: "/images/couple-celebration.jpg",
+} as const;
+
 export const GALLERY_ITEMS: GalleryItem[] = [
-  { id: "couple-portrait", category: "couple", aspect: "portrait", motif: "mandap" },
-  { id: "bride-portrait", category: "bride", aspect: "portrait", motif: "lotus" },
-  { id: "groom-portrait", category: "groom", aspect: "portrait", motif: "peacock" },
-  { id: "family-bride", category: "family", aspect: "landscape", motif: "family" },
-  { id: "family-groom", category: "family", aspect: "landscape", motif: "family" },
-  { id: "decor-mandap", category: "decor", aspect: "square", motif: "marigold" },
+  {
+    id: "couple-portrait",
+    category: "couple",
+    imageSrc: "/images/couple-celebration.jpg",
+    objectPosition: "object-top",
+  },
+  {
+    id: "bride-ceremony",
+    category: "bride",
+    imageSrc: "/images/bride-ceremony.jpg",
+    objectPosition: "object-top",
+  },
+  {
+    id: "groom-sherwani",
+    category: "groom",
+    imageSrc: "/images/groom-sherwani.jpg",
+    objectPosition: "object-top",
+  },
+  {
+    id: "family-blessings",
+    category: "family",
+    imageSrc: "/images/bride-family-blessings.jpg",
+    objectPosition: "object-center",
+  },
+  {
+    id: "bride-portrait",
+    category: "bride",
+    imageSrc: "/images/bride-solo.jpg",
+    objectPosition: "object-top",
+  },
+  {
+    id: "groom-portrait",
+    category: "groom",
+    imageSrc: "/images/groom-solo.jpg",
+    objectPosition: "object-top",
+  },
 ];
 
 export interface BlessingEntry {

@@ -1,11 +1,12 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
+import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
-import { ChevronLeft, ChevronRight, Camera, X } from "lucide-react";
+import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import { GALLERY_ITEMS, type Language } from "@/lib/wedding-data";
 import type { TranslationSchema } from "@/lib/translations";
-import { GalleryArtwork, LotusDivider } from "./Illustrations";
+import { LotusDivider } from "./Illustrations";
 
 interface GallerySectionProps {
   t: TranslationSchema["gallery"];
@@ -57,15 +58,15 @@ export function GallerySection({ t, lang }: GallerySectionProps) {
             {t.subtitle}
           </p>
           <LotusDivider className="mt-4" />
-          <p className="mx-auto mt-3 inline-flex items-center gap-2 rounded-full border border-[#C6A15B]/50 bg-[#F7EFDF] px-4 py-1.5 text-xs text-[#701E32]">
-            <Camera className="h-3.5 w-3.5 text-[#C6A15B]" />
-            {t.placeholderNotice}
-          </p>
         </div>
 
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {GALLERY_ITEMS.map((item, idx) => {
-            const copy = t.items[item.id];
+            const copy = t.items[item.id] ?? {
+              title: item.id,
+              caption: "",
+              tag: item.category,
+            };
             return (
               <motion.div
                 key={item.id}
@@ -79,18 +80,24 @@ export function GallerySection({ t, lang }: GallerySectionProps) {
                   onClick={() => setActiveIndex(idx)}
                   aria-label={`${t.openLightbox}: ${copy.title}`}
                   data-testid={`gallery-item-${item.id}`}
-                  className="gold-border-frame group flex h-full w-full flex-col justify-between overflow-hidden rounded-2xl bg-[#FFF8E8] p-4 text-left transition hover:-translate-y-1 hover:shadow-2xl cursor-pointer"
+                  className="gold-border-frame group flex h-full w-full flex-col justify-between overflow-hidden rounded-2xl bg-[#FFF8E8] p-3.5 text-left transition hover:-translate-y-1 hover:shadow-2xl cursor-pointer"
                 >
-                  <div className="relative overflow-hidden rounded-xl border border-[#C6A15B]/35">
-                    <div className="transition-transform duration-500 group-hover:scale-105">
-                      <GalleryArtwork id={item.id} />
-                    </div>
-                    <span className="absolute left-3 top-3 rounded-full bg-[#102F65]/90 px-3 py-0.5 text-[11px] font-semibold text-[#FFF8E8] backdrop-blur-sm">
+                  <div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl border border-[#C6A15B]/40 bg-[#F7EFDF]">
+                    <Image
+                      src={item.imageSrc}
+                      alt={copy.title}
+                      fill
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      className={`object-cover ${
+                        item.objectPosition ?? "object-top"
+                      } transition-transform duration-500 group-hover:scale-105`}
+                    />
+                    <span className="absolute left-3 top-3 rounded-full bg-[#102F65]/88 px-3 py-0.5 text-[11px] font-semibold text-[#FFF8E8] backdrop-blur-sm">
                       {copy.tag}
                     </span>
                   </div>
 
-                  <div className="px-1 pt-4 pb-1">
+                  <div className="px-1.5 pt-3.5 pb-1">
                     <h3 className="font-serif-display text-xl font-bold text-[#102F65]">
                       {copy.title}
                     </h3>
@@ -113,7 +120,7 @@ export function GallerySection({ t, lang }: GallerySectionProps) {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={() => setActiveIndex(null)}
-            className="fixed inset-0 z-50 flex items-center justify-center bg-[#091A3A]/90 p-4 backdrop-blur-md"
+            className="fixed inset-0 z-50 flex items-center justify-center bg-[#091A3A]/92 p-4 backdrop-blur-md"
             role="dialog"
             aria-modal="true"
             aria-label={activeCopy.title}
@@ -126,33 +133,41 @@ export function GallerySection({ t, lang }: GallerySectionProps) {
               exit={{ opacity: 0, scale: 0.94 }}
               transition={{ duration: 0.25 }}
               onClick={(e) => e.stopPropagation()}
-              className="gold-border-frame paper-texture relative w-full max-w-2xl rounded-3xl p-6 sm:p-10 text-center shadow-2xl"
+              className="gold-border-frame paper-texture relative w-full max-w-2xl rounded-3xl p-5 sm:p-8 text-center shadow-2xl"
             >
               <button
                 type="button"
                 onClick={() => setActiveIndex(null)}
                 aria-label={t.closeLightbox}
                 data-testid="lightbox-close"
-                className="absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-full border border-[#C6A15B]/60 bg-[#FFF8E8] text-[#102F65] hover:bg-[#701E32] hover:text-[#FFF8E8] cursor-pointer"
+                className="absolute right-4 top-4 z-10 flex h-9 w-9 items-center justify-center rounded-full border border-[#C6A15B]/60 bg-[#FFF8E8] text-[#102F65] hover:bg-[#701E32] hover:text-[#FFF8E8] cursor-pointer"
               >
                 <X className="h-4 w-4" />
               </button>
 
               <span className="inline-block rounded-full border border-[#C6A15B]/60 bg-[#F7EFDF] px-3 py-1 text-xs font-semibold text-[#701E32]">
-                {activeCopy.tag} • {t.placeholderBadge}
+                {activeCopy.tag}
               </span>
 
-              <div className="my-6 overflow-hidden rounded-2xl border border-[#C6A15B]/45">
-                <GalleryArtwork id={activeItem.id} />
+              <div className="my-5 flex max-h-[60vh] items-center justify-center overflow-hidden rounded-2xl border border-[#C6A15B]/45 bg-[#102F65]/5">
+                <Image
+                  src={activeItem.imageSrc}
+                  alt={activeCopy.title}
+                  width={1200}
+                  height={900}
+                  className="max-h-[58vh] w-auto rounded-xl object-contain"
+                />
               </div>
 
               <h3 className="font-serif-display text-2xl sm:text-3xl font-bold text-[#102F65]">
                 {activeCopy.title}
               </h3>
-              <p className="mt-2 text-sm text-[#102F65]/80">{activeCopy.caption}</p>
+              <p className="mt-1.5 text-sm text-[#102F65]/80">
+                {activeCopy.caption}
+              </p>
 
               {/* Next / Previous Navigation */}
-              <div className="mt-7 flex items-center justify-between gap-4">
+              <div className="mt-6 flex items-center justify-between gap-4">
                 <button
                   type="button"
                   onClick={() =>
