@@ -34,11 +34,10 @@ export default function WeddingInvitationPage() {
     document.title = t.meta.title;
   }, [lang, t.meta.title]);
 
-  const handleEnvelopeOpened = (enableMusic: boolean) => {
+  const handleEnvelopeOpened = () => {
     setIsOpened(true);
-    if (enableMusic) {
-      setIsPlaying(true);
-    }
+    // Music starts paused until guest taps Play or a custom MP3 song is added
+    setIsPlaying(false);
     window.scrollTo({ top: 0, behavior: "instant" as ScrollBehavior });
   };
 

@@ -3,45 +3,13 @@
 import React, { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { ChevronLeft, ChevronRight, Camera, X } from "lucide-react";
-import { GALLERY_ITEMS, type GalleryItem, type Language } from "@/lib/wedding-data";
+import { GALLERY_ITEMS, type Language } from "@/lib/wedding-data";
 import type { TranslationSchema } from "@/lib/translations";
-import {
-  BrideIllustration,
-  GroomIllustration,
-  LotusDivider,
-  MandapCardIllustration,
-  PeacockFeatherMotif,
-} from "./Illustrations";
+import { GalleryArtwork, LotusDivider } from "./Illustrations";
 
 interface GallerySectionProps {
   t: TranslationSchema["gallery"];
   lang: Language;
-}
-
-function FrameArtwork({ item }: { item: GalleryItem }) {
-  if (item.category === "bride") {
-    return <BrideIllustration className="h-48 w-auto mx-auto" />;
-  }
-  if (item.category === "groom") {
-    return <GroomIllustration className="h-48 w-auto mx-auto" />;
-  }
-  if (item.category === "decor") {
-    return <MandapCardIllustration className="h-40 w-full rounded-xl" />;
-  }
-  if (item.category === "couple") {
-    return (
-      <div className="flex items-center justify-center gap-2">
-        <BrideIllustration className="h-40 w-auto" />
-        <GroomIllustration className="h-40 w-auto" />
-      </div>
-    );
-  }
-  return (
-    <div className="flex flex-col items-center justify-center py-6">
-      <PeacockFeatherMotif className="h-28 w-16" />
-      <LotusDivider className="mt-2" />
-    </div>
-  );
 }
 
 export function GallerySection({ t, lang }: GallerySectionProps) {
@@ -111,22 +79,18 @@ export function GallerySection({ t, lang }: GallerySectionProps) {
                   onClick={() => setActiveIndex(idx)}
                   aria-label={`${t.openLightbox}: ${copy.title}`}
                   data-testid={`gallery-item-${item.id}`}
-                  className="gold-border-frame group flex h-full w-full flex-col justify-between overflow-hidden rounded-2xl bg-[#FFF8E8] p-5 text-left transition hover:-translate-y-1 hover:shadow-2xl cursor-pointer"
+                  className="gold-border-frame group flex h-full w-full flex-col justify-between overflow-hidden rounded-2xl bg-[#FFF8E8] p-4 text-left transition hover:-translate-y-1 hover:shadow-2xl cursor-pointer"
                 >
-                  <div className="flex items-center justify-between gap-2">
-                    <span className="rounded-full bg-[#102F65] px-3 py-0.5 text-[11px] font-semibold text-[#FFF8E8]">
+                  <div className="relative overflow-hidden rounded-xl border border-[#C6A15B]/35">
+                    <div className="transition-transform duration-500 group-hover:scale-105">
+                      <GalleryArtwork id={item.id} />
+                    </div>
+                    <span className="absolute left-3 top-3 rounded-full bg-[#102F65]/90 px-3 py-0.5 text-[11px] font-semibold text-[#FFF8E8] backdrop-blur-sm">
                       {copy.tag}
                     </span>
-                    <span className="rounded-full border border-[#C6A15B]/60 bg-[#F7EFDF] px-2.5 py-0.5 text-[10px] font-medium text-[#701E32]">
-                      {t.placeholderBadge}
-                    </span>
                   </div>
 
-                  <div className="my-4 flex min-h-[190px] items-center justify-center rounded-xl border border-dashed border-[#C6A15B]/55 bg-[#F7EFDF]/60 p-4 transition group-hover:bg-[#F7EFDF]">
-                    <FrameArtwork item={item} />
-                  </div>
-
-                  <div>
+                  <div className="px-1 pt-4 pb-1">
                     <h3 className="font-serif-display text-xl font-bold text-[#102F65]">
                       {copy.title}
                     </h3>
@@ -178,8 +142,8 @@ export function GallerySection({ t, lang }: GallerySectionProps) {
                 {activeCopy.tag} • {t.placeholderBadge}
               </span>
 
-              <div className="my-6 flex min-h-[240px] items-center justify-center rounded-2xl border border-[#C6A15B]/45 bg-[#F7EFDF] p-6">
-                <FrameArtwork item={activeItem} />
+              <div className="my-6 overflow-hidden rounded-2xl border border-[#C6A15B]/45">
+                <GalleryArtwork id={activeItem.id} />
               </div>
 
               <h3 className="font-serif-display text-2xl sm:text-3xl font-bold text-[#102F65]">

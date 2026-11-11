@@ -358,7 +358,7 @@ export const TRANSLATIONS: Record<Language, TranslationSchema> = {
           shortVenue: "Lucknow",
           fullVenue: "Bride's residence, Lucknow",
           addressPlaceholder:
-            "Configurable residence address placeholder — exact street address will be shared directly with guests.",
+            "Address will be shared personally with invited guests.",
           description:
             "An afternoon of auspicious turmeric blessings, intricate henna artistry, folk songs, and marigold warmth with close family and friends.",
           attire: "Sunlit yellows, marigold hues, or festive greens",
@@ -403,7 +403,7 @@ export const TRANSLATIONS: Record<Language, TranslationSchema> = {
       copiedLink: "Location Link Copied!",
       haldiNoteTitle: "Haldi & Mehndi Venue Note",
       haldiNoteBody:
-        "Hosted at the Bride's residence in Lucknow (configurable address placeholder — shared privately with invited guests).",
+        "Hosted at the Bride's residence in Lucknow (address will be shared personally with invited guests).",
       haldiNoteConfigured: "Bride's residence, Lucknow:",
       mapTitle: "Map preview of New Saubhagya Lawn, Lucknow",
     },
@@ -413,8 +413,8 @@ export const TRANSLATIONS: Record<Language, TranslationSchema> = {
       subtitle:
         "Artistic preview frames reserved for our upcoming wedding photographs.",
       placeholderNotice:
-        "Curated artistic placeholders are shown below until the couple's actual photographs are uploaded.",
-      placeholderBadge: "Placeholder Frame",
+        "Artistic keepsake frames are displayed here until the wedding photographs are added.",
+      placeholderBadge: "Keepsake Frame",
       openLightbox: "Open frame in fullscreen",
       closeLightbox: "Close gallery viewer",
       previous: "Previous frame",
@@ -463,10 +463,9 @@ export const TRANSLATIONS: Record<Language, TranslationSchema> = {
       contactHeading: "For Assistance & Coordination",
       contactPerson: "Contact Person: Mr. Ram Kumar",
       phoneLabel: "Phone:",
-      phonePlaceholder:
-        "Configurable contact number placeholder (to be updated)",
-      modeDemo: "Demo Storage Mode (Local Fallback)",
-      modeLive: "Connected to Supabase Database",
+      phonePlaceholder: "To be shared soon by Mr. Ram Kumar",
+      modeDemo: "Preview Storage (Demo Mode)",
+      modeLive: "Saved to Wedding Guestbook",
       nameLabel: "Guest Full Name",
       namePlaceholder: "Enter your full name",
       mobileLabel: "Mobile Number",
@@ -545,9 +544,9 @@ export const TRANSLATIONS: Record<Language, TranslationSchema> = {
       mute: "Mute music",
       unmute: "Unmute music",
       volume: "Music volume",
-      trackTitle: "Raag Bhupali Wedding Instrumental",
-      trackSubtitle: "Soft Bansuri & Santoor Ambience",
-      demoTrackNote: "Royalty-free synthesized wedding instrumental",
+      trackTitle: "Wedding Music",
+      trackSubtitle: "Tap play to listen",
+      demoTrackNote: "Replace with your chosen MP3 song",
     },
   },
   hi: {
@@ -844,9 +843,9 @@ export const TRANSLATIONS: Record<Language, TranslationSchema> = {
       mute: "आवाज़ बंद करें",
       unmute: "आवाज़ चालू करें",
       volume: "संगीत की ध्वनि",
-      trackTitle: "राग भूपाली मंगल वादन",
-      trackSubtitle: "बांसुरी एवं संतूर की मधुर धुन",
-      demoTrackNote: "रॉयल्टी-फ्री निर्मित विवाह वादन",
+      trackTitle: "विवाह मंगल गीत",
+      trackSubtitle: "सुनने के लिए प्ले दबाएं",
+      demoTrackNote: "अपना पसंदीदा MP3 गीत जोड़ें",
     },
   },
 };

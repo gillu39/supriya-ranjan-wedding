@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import type { Language } from "@/lib/wedding-data";
 import type { TranslationSchema } from "@/lib/translations";
-import { CornerFiligree, WaxSealCrest } from "./Illustrations";
+import { CornerFiligree, LotusDivider, WaxSealCrest } from "./Illustrations";
 import { FloatingPetals } from "./FloatingPetals";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 
@@ -45,12 +45,12 @@ export function EnvelopeOpening({
   return (
     <section
       aria-label="Wedding Invitation Envelope"
-      className="paper-texture relative flex min-h-screen w-full flex-col items-center justify-center overflow-hidden px-4 py-12"
+      className="paper-texture relative flex min-h-screen w-full flex-col items-center justify-center overflow-hidden px-4 py-16"
     >
       <FloatingPetals className="absolute inset-0 z-0" />
 
       {/* Top Bar: Language Toggle & Skip Animation */}
-      <div className="fixed top-4 left-4 right-4 z-30 flex items-center justify-between max-w-5xl mx-auto">
+      <div className="fixed top-4 left-4 right-4 z-30 mx-auto flex max-w-5xl items-center justify-between">
         <LanguageSwitcher lang={lang} onChange={onLanguageChange} />
         <button
           type="button"
@@ -64,7 +64,7 @@ export function EnvelopeOpening({
 
       {/* Interactive Envelope Container */}
       <motion.div
-        initial={{ opacity: 0, scale: 0.95 }}
+        initial={{ opacity: 0, scale: 0.96 }}
         animate={{
           opacity: isSliding ? 0 : 1,
           scale: isSliding ? 1.03 : 1,
@@ -73,28 +73,25 @@ export function EnvelopeOpening({
         className="relative z-10 flex w-full max-w-lg flex-col items-center"
       >
         <div className="perspective-1200 relative w-full max-w-[440px]">
-          {/* Invitation Card sliding up out of the envelope */}
+          {/* Invitation Card peeking cleanly above the envelope pocket */}
           <motion.div
             initial={false}
             animate={{
-              y: isSliding ? -115 : isOpening ? -24 : 0,
-              opacity: isOpening ? 1 : 0.98,
+              y: isSliding ? -110 : isOpening ? -28 : 0,
             }}
             transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
-            className="gold-border-frame paper-texture relative z-10 mx-auto w-[92%] rounded-xl px-6 py-8 sm:px-8 sm:py-10 text-center"
+            className="gold-border-frame paper-texture relative z-10 mx-auto w-[90%] rounded-t-2xl rounded-b-lg px-6 pt-8 pb-20 sm:px-8 sm:pt-10 sm:pb-24 text-center"
           >
-            <CornerFiligree className="pointer-events-none absolute top-2 left-2 h-12 w-12" />
-            <CornerFiligree flipX className="pointer-events-none absolute top-2 right-2 h-12 w-12" />
-            <CornerFiligree flipY className="pointer-events-none absolute bottom-2 left-2 h-12 w-12" />
-            <CornerFiligree flipX flipY className="pointer-events-none absolute bottom-2 right-2 h-12 w-12" />
+            <CornerFiligree className="pointer-events-none absolute top-2 left-2 h-11 w-11" />
+            <CornerFiligree flipX className="pointer-events-none absolute top-2 right-2 h-11 w-11" />
 
             <p className="text-xs sm:text-sm italic text-[#701E32]">
               {t.line1}
             </p>
-            <p className="mt-3 whitespace-pre-line text-xs sm:text-sm leading-relaxed text-[#102F65]/85">
+            <p className="mt-2.5 whitespace-pre-line text-xs sm:text-sm leading-relaxed text-[#102F65]/85">
               {t.line2}
             </p>
-            <div className="my-4 mx-auto h-[1px] w-20 bg-[#C6A15B]/60" />
+            <LotusDivider className="my-3.5" />
             <p className="whitespace-pre-line text-xs sm:text-sm text-[#102F65]/85">
               {t.line3}
             </p>
@@ -107,25 +104,23 @@ export function EnvelopeOpening({
           </motion.div>
 
           {/* Royal Navy Envelope Lower Pocket & Flap Overlay */}
-          <div className="relative z-20 -mt-14 sm:-mt-16 overflow-visible">
-            {/* Envelope Pocket Body */}
-            <div className="navy-silk relative mx-auto h-44 sm:h-48 w-full rounded-b-2xl border border-[#C6A15B]/80 shadow-2xl overflow-hidden">
-              {/* Diagonal envelope fold lines */}
+          <div className="relative z-20 -mt-12 sm:-mt-14 overflow-visible">
+            <div className="navy-silk relative mx-auto h-40 sm:h-44 w-full rounded-b-2xl border border-[#C6A15B]/85 shadow-2xl overflow-hidden">
               <svg
-                viewBox="0 0 440 190"
+                viewBox="0 0 440 180"
                 preserveAspectRatio="none"
-                className="absolute inset-0 h-full w-full pointer-events-none"
+                className="pointer-events-none absolute inset-0 h-full w-full"
                 aria-hidden="true"
               >
                 <path
-                  d="M0 0L220 112L440 0"
+                  d="M0 0L220 106L440 0"
                   stroke="#C6A15B"
                   strokeOpacity="0.65"
                   strokeWidth="1.5"
                   fill="none"
                 />
                 <path
-                  d="M0 190L165 86M440 190L275 86"
+                  d="M0 180L165 80M440 180L275 80"
                   stroke="#C6A15B"
                   strokeOpacity="0.35"
                   strokeWidth="1"
@@ -135,7 +130,7 @@ export function EnvelopeOpening({
                   x="10"
                   y="10"
                   width="420"
-                  height="170"
+                  height="160"
                   rx="10"
                   stroke="#C6A15B"
                   strokeOpacity="0.35"
@@ -153,22 +148,22 @@ export function EnvelopeOpening({
                 }}
                 transition={{ duration: 0.75, ease: [0.4, 0, 0.2, 1] }}
                 style={{ transformOrigin: "top center" }}
-                className="preserve-3d absolute top-0 left-0 right-0 h-28"
+                className="preserve-3d absolute top-0 left-0 right-0 h-26"
               >
                 <svg
-                  viewBox="0 0 440 118"
+                  viewBox="0 0 440 112"
                   preserveAspectRatio="none"
                   className="backface-hidden h-full w-full drop-shadow-md"
                   aria-hidden="true"
                 >
                   <path
-                    d="M2 0H438L220 112L2 0Z"
+                    d="M2 0H438L220 106L2 0Z"
                     fill="#143A7B"
                     stroke="#C6A15B"
                     strokeWidth="1.8"
                   />
                   <path
-                    d="M24 6H416L220 100L24 6Z"
+                    d="M24 6H416L220 94L24 6Z"
                     stroke="#C6A15B"
                     strokeOpacity="0.45"
                     strokeWidth="1"
@@ -189,9 +184,9 @@ export function EnvelopeOpening({
                 transition={{ duration: 0.45 }}
                 whileHover={{ scale: 1.07 }}
                 whileTap={{ scale: 0.96 }}
-                className="absolute left-1/2 top-[48%] z-40 -translate-x-1/2 -translate-y-1/2 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#C6A15B] rounded-full"
+                className="absolute left-1/2 top-[48%] z-40 -translate-x-1/2 -translate-y-1/2 cursor-pointer rounded-full focus:outline-none focus-visible:ring-2 focus-visible:ring-[#C6A15B]"
               >
-                <WaxSealCrest size={84} className="drop-shadow-xl" />
+                <WaxSealCrest size={82} className="drop-shadow-xl" />
               </motion.button>
             </div>
           </div>
