@@ -82,7 +82,7 @@ export function GallerySection({ t, lang }: GallerySectionProps) {
                   data-testid={`gallery-item-${item.id}`}
                   className="gold-border-frame group flex h-full w-full flex-col justify-between overflow-hidden rounded-2xl bg-[#FFF8E8] p-3.5 text-left transition hover:-translate-y-1 hover:shadow-2xl cursor-pointer"
                 >
-                  <div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl border border-[#C6A15B]/40 bg-[#F7EFDF]">
+                  <div className="relative aspect-[4/5] w-full overflow-hidden rounded-xl border border-[#C6A15B]/40 bg-[#F7EFDF]">
                     <Image
                       src={item.imageSrc}
                       alt={copy.title}

@@ -80,13 +80,13 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     id: "couple-portrait",
     category: "couple",
     imageSrc: "/images/couple-celebration.jpg",
-    objectPosition: "object-top",
+    objectPosition: "object-[50%_5%]",
   },
   {
     id: "bride-ceremony",
     category: "bride",
     imageSrc: "/images/bride-ceremony.jpg",
-    objectPosition: "object-top",
+    objectPosition: "object-[38%_45%]",
   },
   {
     id: "groom-sherwani",
@@ -98,19 +98,19 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     id: "family-blessings",
     category: "family",
     imageSrc: "/images/bride-family-blessings.jpg",
-    objectPosition: "object-center",
+    objectPosition: "object-[30%_25%]",
   },
   {
     id: "bride-portrait",
     category: "bride",
     imageSrc: "/images/bride-solo.jpg",
-    objectPosition: "object-top",
+    objectPosition: "object-[50%_28%]",
   },
   {
     id: "groom-portrait",
     category: "groom",
     imageSrc: "/images/groom-solo.jpg",
-    objectPosition: "object-top",
+    objectPosition: "object-center",
   },
 ];
 

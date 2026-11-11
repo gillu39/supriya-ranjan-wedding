@@ -66,7 +66,7 @@ export function CoupleIntroduction({ t, lang }: CoupleIntroductionProps) {
                   alt={t.brideName}
                   fill
                   sizes="208px"
-                  className="object-cover object-top"
+                  className="object-cover object-[35%_48%]"
                 />
               </div>
             </div>
