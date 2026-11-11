@@ -42,9 +42,11 @@ export interface TranslationSchema {
     sectionSubtitle: string;
     brideRole: string;
     brideName: string;
+    brideDegree: string;
     brideQuote: string;
     groomRole: string;
     groomName: string;
+    groomDegree: string;
     groomQuote: string;
     brideFamilyHeading: string;
     groomFamilyHeading: string;
@@ -291,13 +293,15 @@ export const TRANSLATIONS: Record<Language, TranslationSchema> = {
       sectionSubtitle:
         "Bound by tradition, blessed by elders, and united in love.",
       brideRole: "The Bride",
-      brideName: "Supriya Singh",
+      brideName: "Dr. Supriya Singh",
+      brideDegree: "M.Tech, Ph.D. in Computer Science",
       brideQuote:
-        "With the love and blessings of her family, she begins a beautiful new chapter.",
+        "Rooted in grace, wisdom, and her family's endless love, she steps joyfully into a new chapter of togetherness.",
       groomRole: "The Groom",
       groomName: "Dr. Ranjan Bhaiji Patariya",
+      groomDegree: "MS - Orthopedic",
       groomQuote:
-        "With the love and blessings of his family, he begins a beautiful new chapter.",
+        "Guided by compassion, dedication, and the blessings of his elders, he welcomes a lifetime of love and harmony.",
       brideFamilyHeading: "Bride's Family",
       groomFamilyHeading: "Groom's Family",
       grandparentsLabelBride: "Granddaughter of",
@@ -589,13 +593,15 @@ export const TRANSLATIONS: Record<Language, TranslationSchema> = {
       sectionSubtitle:
         "परंपराओं से जुड़े, बड़ों के आशीर्वाद से पल्लवित और स्नेह से बंधे।",
       brideRole: "सौभाग्यकांक्षिणी वधू",
-      brideName: "सुप्रिया सिंह",
+      brideName: "डॉ. सुप्रिया सिंह",
+      brideDegree: "एम.टेक, पीएच.डी. (कंप्यूटर साइंस)",
       brideQuote:
-        "अपने परिवार के स्नेह और आशीर्वाद के साथ वे जीवन के एक सुंदर नए अध्याय की शुरुआत कर रही हैं।",
+        "संस्कार, ज्ञान और परिवार के असीम स्नेह के साथ वे संग-साथ के एक सुंदर नए अध्याय की शुरुआत कर रही हैं।",
       groomRole: "आयुष्मान वर",
       groomName: "डॉ. रंजन भाईजी पटरिया",
+      groomDegree: "एम.एस. (ऑर्थोपेडिक)",
       groomQuote:
-        "अपने परिवार के स्नेह और आशीर्वाद के साथ वे जीवन के एक सुंदर नए अध्याय की शुरुआत कर रहे हैं।",
+        "करुणा, समर्पण और बड़ों के मंगल आशीर्वाद के साथ वे प्रेम एवं सौहार्द के नए जीवन सफर का स्वागत कर रहे हैं।",
       brideFamilyHeading: "वधू पक्ष",
       groomFamilyHeading: "वर पक्ष",
       grandparentsLabelBride: "पौत्री",

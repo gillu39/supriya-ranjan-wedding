@@ -74,6 +74,9 @@ export function CoupleIntroduction({ t, lang }: CoupleIntroductionProps) {
             <h3 className="font-serif-display text-2xl sm:text-3xl font-bold text-[#102F65]">
               {t.brideName}
             </h3>
+            <p className="mt-1 text-xs sm:text-sm font-medium tracking-wide text-[#701E32]">
+              ({t.brideDegree})
+            </p>
             <p className="mt-3 text-sm sm:text-base leading-relaxed text-[#102F65]/80 italic">
               &ldquo;{t.brideQuote}&rdquo;
             </p>
@@ -109,6 +112,9 @@ export function CoupleIntroduction({ t, lang }: CoupleIntroductionProps) {
             <h3 className="font-serif-display text-2xl sm:text-3xl font-bold text-[#102F65]">
               {t.groomName}
             </h3>
+            <p className="mt-1 text-xs sm:text-sm font-medium tracking-wide text-[#701E32]">
+              ({t.groomDegree})
+            </p>
             <p className="mt-3 text-sm sm:text-base leading-relaxed text-[#102F65]/80 italic">
               &ldquo;{t.groomQuote}&rdquo;
             </p>
