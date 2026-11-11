@@ -17,14 +17,13 @@ export const WEDDING_CONFIG = {
   venue: {
     name: "New Saubhagya Lawn",
     city: "Lucknow, Uttar Pradesh, India",
-    lat: 26.8920583,
-    lng: 80.9345259,
-    mapsUrl:
-      "https://www.google.com/maps/place/Saubhagya+Lawn/@26.8920583,80.9345259,17.44z/",
+    lat: 26.8939236,
+    lng: 80.9354617,
+    mapsUrl: "https://maps.google.com/?q=26.8939236,80.9354617",
     directionsUrl:
-      "https://www.google.com/maps/dir/?api=1&destination=26.8920583,80.9345259",
+      "https://www.google.com/maps/dir/?api=1&destination=26.8939236,80.9354617",
     embedUrl:
-      "https://maps.google.com/maps?q=26.8920583,80.9345259&z=17&output=embed",
+      "https://maps.google.com/maps?q=26.8939236,80.9354617&z=17&output=embed",
   },
   placeholders: {
     haldiAddress:

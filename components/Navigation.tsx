@@ -22,7 +22,6 @@ export function Navigation({ lang, onLanguageChange, t }: NavigationProps) {
     { href: "#celebrations", label: t.events },
     { href: "#venue", label: t.venue },
     { href: "#gallery", label: t.gallery },
-    { href: "#rsvp", label: t.rsvp },
     { href: "#blessings", label: t.blessings },
   ];
 

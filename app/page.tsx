@@ -13,7 +13,6 @@ import { ScratchCard } from "@/components/ScratchCard";
 import { EventsSection } from "@/components/EventsSection";
 import { VenueSection } from "@/components/VenueSection";
 import { GallerySection } from "@/components/GallerySection";
-import { RSVPSection } from "@/components/RSVPSection";
 import { BlessingsSection } from "@/components/BlessingsSection";
 import { Footer } from "@/components/Footer";
 import { MusicPlayer } from "@/components/MusicPlayer";
@@ -107,10 +106,7 @@ export default function WeddingInvitationPage() {
               {/* Screen 8: Photo Gallery */}
               <GallerySection t={t.gallery} lang={lang} />
 
-              {/* Screen 9: RSVP */}
-              <RSVPSection t={t.rsvp} lang={lang} />
-
-              {/* Screen 10: Blessings and Wishes */}
+              {/* Screen 9: Blessings and Wishes */}
               <BlessingsSection t={t.blessings} lang={lang} />
             </main>
 
