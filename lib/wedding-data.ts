@@ -70,7 +70,7 @@ export interface GalleryItem {
 
 export const COUPLE_PORTRAITS = {
   bride: "/images/bride-ceremony.jpg",
-  groom: "/images/groom-sherwani.jpg",
+  groom: "/images/groom-solo.jpg",
   couple: "/images/couple-celebration.jpg",
 } as const;
 
@@ -79,18 +79,18 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     id: "couple-portrait",
     category: "couple",
     imageSrc: "/images/couple-celebration.jpg",
-    objectPosition: "object-[50%_5%]",
+    objectPosition: "object-[50%_18%]",
   },
   {
     id: "bride-ceremony",
     category: "bride",
     imageSrc: "/images/bride-ceremony.jpg",
-    objectPosition: "object-[38%_45%]",
+    objectPosition: "object-[50%_24%]",
   },
   {
-    id: "groom-sherwani",
+    id: "groom-portrait",
     category: "groom",
-    imageSrc: "/images/groom-sherwani.jpg",
+    imageSrc: "/images/groom-solo.jpg",
     objectPosition: "object-top",
   },
   {
@@ -103,13 +103,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     id: "bride-portrait",
     category: "bride",
     imageSrc: "/images/bride-solo.jpg",
-    objectPosition: "object-[50%_28%]",
-  },
-  {
-    id: "groom-portrait",
-    category: "groom",
-    imageSrc: "/images/groom-solo.jpg",
-    objectPosition: "object-center",
+    objectPosition: "object-[50%_24%]",
   },
 ];
 
