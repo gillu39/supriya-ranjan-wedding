@@ -44,7 +44,8 @@ const devanagariSans = Noto_Sans_Devanagari({
 });
 
 const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL?.trim() || "http://localhost:3000";
+  process.env.NEXT_PUBLIC_SITE_URL?.trim() ||
+  "https://weddinginvitation-nu-ten.vercel.app";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -63,6 +64,7 @@ export const metadata: Metadata = {
     title: "Supriya & Dr. Ranjan — Wedding Invitation",
     description:
       "Two souls, one beautiful journey. Celebrate with us on 24 November 2026 at New Saubhagya Lawn, Lucknow.",
+    url: siteUrl,
     type: "website",
     locale: "en_IN",
     alternateLocale: ["hi_IN"],
