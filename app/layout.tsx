@@ -61,20 +61,31 @@ export const metadata: Metadata = {
     "24 November 2026",
   ],
   openGraph: {
-    title: "Supriya & Dr. Ranjan — Wedding Invitation",
+    title: "Supriya & Ranjan — Wedding Invitation",
     description:
-      "Two souls, one beautiful journey. Celebrate with us on 24 November 2026 at New Saubhagya Lawn, Lucknow.",
+      "Two souls, one beautiful journey. Celebrate with us on 24 November 2026 at Saubhagya Lawn, Lucknow.",
     url: siteUrl,
     type: "website",
     locale: "en_IN",
     alternateLocale: ["hi_IN"],
-    siteName: "Supriya & Dr. Ranjan Wedding",
+    siteName: "Supriya & Ranjan Wedding",
+    images: [
+      {
+        url: `${siteUrl}/og-card.jpg`,
+        secureUrl: `${siteUrl}/og-card.jpg`,
+        width: 1200,
+        height: 630,
+        type: "image/jpeg",
+        alt: "Supriya & Ranjan — Wedding Invitation | 24 November 2026, Lucknow",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Supriya & Dr. Ranjan — Wedding Invitation",
+    title: "Supriya & Ranjan — Wedding Invitation",
     description:
       "Celebrate the wedding of Supriya Singh & Dr. Ranjan Bhaiji Patariya on 24 November 2026 in Lucknow.",
+    images: [`${siteUrl}/og-card.jpg`],
   },
 };
 
