@@ -13,7 +13,7 @@ export interface WeddingEventData {
 export const WEDDING_CONFIG = {
   targetDateISO: "2026-11-24T19:00:00+05:30",
   timezone: "Asia/Kolkata",
-  audioPath: "/audio/shehnai-bansuri-wedding.wav",
+  audioPath: "/audio/wedding-theme.mp3",
   venue: {
     name: "New Saubhagya Lawn",
     city: "Lucknow, Uttar Pradesh, India",

@@ -35,8 +35,7 @@ export default function WeddingInvitationPage() {
 
   const handleEnvelopeOpened = () => {
     setIsOpened(true);
-    // Music starts paused until guest taps Play or a custom MP3 song is added
-    setIsPlaying(false);
+    setIsPlaying(true);
     window.scrollTo({ top: 0, behavior: "instant" as ScrollBehavior });
   };
 

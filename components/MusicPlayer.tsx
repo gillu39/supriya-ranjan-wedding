@@ -59,7 +59,7 @@ export function MusicPlayer({
         ref={audioRef}
         src={WEDDING_CONFIG.audioPath}
         loop
-        preload="none"
+        preload="metadata"
       />
 
       <button
